@@ -1,0 +1,16 @@
+To get your USB dongle working, you need to do :
+
+modprobe hci - HCI support module
+modprobe hci_usb - USB HCI driver module
+modprobe l2cap - protocol
+modprobe rfcomm - protocol (prefered)
+modprobe sco - protocol
+hciconfig hci0 up - bring hci up 
+
+PPP over rfcomm
+
+set up the modem
+
+connect \0/
+ 
+

@@ -1,0 +1,309 @@
+/* BEGIN DEVELOPERWORKS STYLES */
+.dwo1 { background-color : #ffffff }
+.dwbg { background-color : #ffcc66 }
+.dwg3 { background-color : #333333 }
+/* patterns */
+.dwg6 { background-color : #666666 }
+
+.pgray { background-color: #eeeeee; }
+
+.ortext { color: #e15119; }
+
+.title2 { font-family: Arial, sans-serif; font-weight: bold; font-size: 22px; }
+.dwsmall { font-family: Verdana, sans-serif; font-size: 11px; } 
+.dwinput { font-family: Verdana, sans-serif; font-size: 8pt; width: 124; }
+
+a.feature:link { text-decoration: none; color: #000000; font-family: Arial, sans-serif; font-weight: bold; font-size: 17px; }
+a.feature:visited { text-decoration: none; color: #000000; font-family: Arial, sans-serif; font-weight: bold; font-size: 17px; }
+a.feature:hover { text-decoration: none; color: #000000; font-family: Arial, sans-serif; font-weight: bold; font-size: 17px; }
+
+a.dwbctl:link { text-decoration: none; color: #000000; font-family: Verdana, sans-serif; font-size: 10px; }
+a.dwbctl:visited { text-decoration: none; color: #000000; font-family: Verdana, sans-serif; font-size: 10px; }
+a.dwbctl:hover { text-decoration: underline; color: #000000; font-family: Verdana, sans-serif; font-size: 10px; }
+.dwbct1 { font-family: Verdana, sans-serif; color: #000000; font-size: 11px; }
+
+a.smalltitle:link { text-decoration: none; font-family: Arial, san-serif; font-size: 15px; font-weight: normal }
+a.smalltitle:visited { text-decoration: none; font-family: Arial, san-serif; font-size: 15px; font-weight: normal }
+a.smalltitle:hover { text-decoration: none; font-family: Arial, san-serif; font-size: 15px; font-weight: normal }
+
+.bluebullet { color: #006699; font-weight: bold; }
+
+.tdgold { color: #000000; background: #ffcc66; font-family: Arial, sans-serif; font-weight: bold; font-size: 12px; }
+.tdgray9 { color: #ffffff; background: #999999; font-family: Arial, sans-serif; font-weight: bold; font-size: 12px; }
+.tdblueb { color: #000000; background: #b5c9db; font-family: Arial, sans-serif; font-weight: bold; font-size: 12px; }
+.tddmbg { color: #000000; background: #40a629; font-family: Arial, sans-serif; font-weight: bold; font-size: 12px; }
+.tdesbg { color: #000000; background: #333333; font-family: Arial, sans-serif; font-weight: bold; font-size: 12px; }
+.tdlsbg { color: #000000; background: #ffd100; font-family: Arial, sans-serif; font-weight: bold; font-size: 12px; }
+.tdrbg { color: #000000; background: #009ece; font-family: Arial, sans-serif; font-weight: bold; font-size: 12px; }
+.tdtvbg { color: #000000; background: #fd1b14; font-family: Arial, sans-serif; font-weight: bold; font-size: 12px; }
+.tdwbg { color: #000000; background: #6a3d9a; font-family: Arial, sans-serif; font-weight: bold; font-size: 12px; }
+
+/* Begin common page styles - if you use one of these styles for something else, move it out of these comment tags */
+.astitle { font-family: Arial, sans-serif; font-weight: bold; font-size: 25px; color: #CC6633}
+.atitle { font-family: Arial, sans-serif; font-weight: bold; font-size: 25px; }
+.atitle2 { font-family: Arial, sans-serif; font-weight: bold; font-size: 18px; }
+.atitle3 { font-family: Arial, sans-serif; font-weight: bold; font-size: 14px; }
+.code {font-family: monospace; font-size: 14px;}
+.boldcode {font-family: monospace; font-size: 14px; font-weight: bold}
+.rboldcode {font-family: monospace; font-size: 14px; font-weight: bold; color: #ff0000}
+.gboldcode {font-family: monospace; font-size: 14px; font-weight: bold; color: #009966}
+.bboldcode {font-family: monospace; font-size: 14px; font-weight: bold; color: #0000ff}
+/* End common page styles */
+
+/* Begin View Styles - if you use one of these styles for something else, move it out of these comment tags */
+.tdgoldvw { color: #000000; background: #ffcc66; font-family: Arial, sans-serif; }
+.sort { font-family: Helvetica, sans-serif; font-weight: bold; font-size: 13px; }
+.sortg6 { font-family: Helvetica, sans-serif; font-weight: bold; color: #666666; font-size: 13px; }
+
+a.cvred:link { text-decoration: underline; color: #cc6633; font-family: Verdana, sans-serif; }
+a.cvred:visited { text-decoration: underline; color: #cc6633; font-family: Verdana, sans-serif; }
+a.cvred:hover { text-decoration: underline; color: #cc6633; font-family: Verdana, sans-serif; }
+/* End View Styles */
+
+/* Begin Search 2003 Styles - if you use one of these styles for something else, move it out of these comment tags */
+.tbgdw { background-color: #006699; background-image: url(http://www-136.ibm.com/i/gr100.gif); }
+.dwsmallwh { font-family: Verdana, sans-serif; color: #ffffff; font-size: 11px; }
+.dwsearch24 { font-family: Arial, sans-serif; color: #ffffff; font-size: 12px; }
+.dwsearch { font-family: Verdana, sans-serif; color: #000000; font-size: 11px; }
+.tdosm { font-family: Verdana, sans-serif; color: #e15119; font-size: 11px; }
+a.searchtabnavss:link { text-decoration: none; color: #000000; font-family: Arial, sans-serif; font-size: 11px; }
+a.searchtabnavss:visited { text-decoration: none; color: #000000; font-family: Arial, sans-serif; font-size: 11px; }
+a.searchtabnavss:hover { text-decoration: underline; color: #000000; font-family: Arial, sans-serif; font-size: 11px; }
+.searchtabhiss { text-decoration: none; font-family: Arial, sans-serif; font-weight: bold; color: #000000; font-size: 11px; }
+.smallarialgr9 { font-family: Arial, sans-serif; color: #999999; font-size: 11px; }
+/* End Search 2003 Styles */
+
+/* END DEVELOPERWORKS STYLES */
+
+
+/* BEGIN IBM ONEX STYLES */
+/* MASTHEAD STYLES */
+.bbg{ background-color:#000; white-space:nowrap;}
+/* following already in this style file, but commented out */
+/* .bbg { background-color: #000000; vertical-align: middle; } */
+
+.mbbg{ background:#000 url(//www.ibm.com/i/v14/t/masthead-bg.gif) repeat-x; }
+
+.cty-tou{ background:#2f4e6f; white-space:nowrap; }
+
+.upper-masthead-corner{ background-image:url("//www.ibm.com/i/v14/t/upper-nav-cnr.gif"); background-repeat:no-repeat; background-position:100% 100%; }
+
+.spacer{ color:#98b1c4; white-space:nowrap; font-family:verdana,arial,sans-serif; font-size:10px; }
+
+.country{ color:#c8d7e3; white-space:nowrap font-family:verdana,arial,sans-serif; font-size:10px; }
+/* following already in this style file, but commented out */
+/* .country { color: #99ccff; font-family: Verdana, sans-serif; font-size: 10px; font-weight: bold; } */
+
+a.ur-link:link,
+a.ur-link:visited{ text-decoration:none; color:#c8d7e3; white-space:nowrap; font-family:verdana,arial,sans-serif; font-size:10px; }
+a.ur-link:hover{ text-decoration:underline; color:#c8d7e3; white-space:nowrap; font-family:verdana,arial,sans-serif; font-size:10px; }
+
+td.upper-masthead-divider{ background-image:url("//www.ibm.com/i/v14/t/upper-masthead-divider.gif"); background-repeat:no-repeat; background-position:50% 50%; height:17px; }
+
+.cty-tou-border{ background:#3c5f84; }
+
+/* following already in this style file, not commented out, but this is the size in onex style: verdana, arial, sans-serif 10 px */
+/* .small { font-family: Verdana, sans-serif; font-size: 11px; } */
+
+.input{ background:#eee; width:130px; font-family:verdana,arial,sans-serif; font-size:10px; height:16px; }
+
+/* egd added this one for the scope */
+.input-scope{ background:#eee; width:150px; font-family:verdana,arial,sans-serif; font-size:10px; height:16px; }
+
+td.blbg{ background:#c8d7e3; border-top:2px solid #99afc4; border-bottom:1px solid #99afc4; white-space:nowrap; height:22px; }
+
+a.masthead-mainlink:link,
+a.masthead-mainlink:visited{ text-decoration:none; color:#293d6b; white-space:nowrap; font-family:verdana,arial,sans-serif; font-weight:bold; font-size:10px; }
+a.masthead-mainlink:hover{ text-decoration:underline; color:#293d6b; white-space:nowrap; font-family:verdana,arial,sans-serif; font-weight:bold; font-size:10px; }
+
+td.masthead-divider{ background-image:url("//www.ibm.com/i/v14/t/masthead-divider.gif"); background-repeat:no-repeat; background-position:50% 60%; }
+/* END MASTHEAD */
+
+/* LEFT NAVIGATION */
+.dbg{ background-color:#fff; }
+
+td.left-nav-spacer{ height:22px; text-align:right; }
+
+.left-nav-child-highlight img,
+.left-nav-child img,
+.rlinks img{ float:right; margin-right:0px; }
+
+th.left-nav-overview{ background:#98b1c4; text-align:left; padding-left:4px; padding-right:5px; padding-top:3px; padding-bottom:4px; }
+
+a.left-nav-overview:link,
+a.left-nav-overview:visited{ text-decoration:none; color:#fff; font-family:verdana,arial,sans-serif; font-weight:bold; font-size:10px; }
+a.left-nav-overview:hover{ text-decoration:underline; color:#fff; font-family:verdana,arial,sans-serif; font-weight:bold; font-size:10px; }
+
+td.left-nav{ border-top:1px solid white; background-color:#c8d7e3; vertical-align:top; padding-left:4px; padding-right:5px; padding-top:3px; padding-bottom:4px; }
+
+a.left-nav:link,
+a.left-nav:visited{ text-decoration:none; color:#293d6b; font-family:verdana,arial,sans-serif; font-weight:bold; font-size:10px; }
+a.left-nav:hover{ text-decoration:underline; color:#293d6b; font-family:verdana,arial,sans-serif; font-weight:bold; font-size:10px; }
+
+/* Left navigation separator */
+td.dw-left-nav-separator { background: #98b1c4; } 
+td.dw-left-nav { background: #c8d7e3; padding-top:3px; padding-bottom:4px; }
+
+tr.left-nav-child td{ background-color:#c8d7e3; vertical-align:top; padding-top:3px; padding-bottom:4px; padding-right:4px; }
+
+a.left-nav-child:link,
+a.left-nav-child:visited{ text-decoration:none; color:#293d6b; font-family:verdana,arial,sans-serif; font-size:10px; }
+a.left-nav-child:hover{ text-decoration:underline; color:#293d6b; font-family:verdana,arial,sans-serif; font-size:10px; }
+
+td.left-nav-highlight{ background:#fff; vertical-align:top; border-top:1px solid white; padding-left:4px; padding-right:5px; padding-top:3px; padding-bottom:4px; }
+
+tr.left-nav-child-highlight td{ background:#fff; vertical-align:top; padding-top:3px; padding-bottom:4px; padding-right:4px; }
+
+tr.left-nav-last td{ border-top:1px solid white; }
+
+tr.left-nav-last{ background-color:#c8d7e3; vertical-align:top; }
+
+td.related{ padding-left:4px; padding-right:5px; padding-bottom:3px; }
+
+b.related{ color:#666; font-family:verdana,arial,sans-serif; font-weight:bold; font-size:10px; }
+
+tr.rlinks td{ vertical-align:top; padding-bottom:2px; padding-right:4px; }
+
+/* a.rlinks commented out in old styles */
+a.rlinks:link,
+a.rlinks:visited{ text-decoration:none; color:#666; font-family:verdana,arial,sans-serif; font-size:10px; }
+a.rlinks:hover{ text-decoration:underline; color:#666; font-family:verdana,arial,sans-serif; font-size:10px; }
+
+/* Not sure styles from here to END LEFT NAVIGATION needed */
+.left-nav-corner{ background-image:url("//www.ibm.com/i/v14/t/left-nav-corner.gif"); background-repeat:no-repeat;  background-position:100% 100%; }
+
+a.nav:link,
+a.nav:visited{ text-decoration:none; color:#293d6b; font-family:verdana,arial,sans-serif; font-size:10px; }
+a.nav:hover{ text-decoration:underline; color:#293d6b; font-family:verdana,arial,sans-serif; font-size:10px; }
+
+/* NS6-onex screen css comment */
+body > table:first-child td img{ display:block; }
+img.display-img{ display:block; }
+/* NS6 */
+
+/* put color in a.rlinks and comment this out b.rlinks{ color:#666; } */
+/* END LEFT NAVIGATION */
+
+/* FOOTER STYLES */
+/* Footer uses bbg, spacer */
+
+/* a.mainlink commented out in old styles */
+a.mainlink:link,
+a.mainlink:visited{ text-decoration:none; color:#fff; white-space:nowrap; font-family:verdana,arial,sans-serif; font-weight:bold; font-size:10px; }
+a.mainlink:hover{ text-decoration:underline; color:#fff; white-space:nowrap; font-family:verdana,arial,sans-serif; font-weight:bold; font-size:10px; }
+
+td.footer-divider{ background-image:url("//www.ibm.com/i/v14/t/footer-divider.gif"); background-repeat:no-repeat; background-position:50% 50%; }
+
+/* END IBM ONEX STYLES *
+
+/* BEGIN IBM STYLES */
+.hbg {
+background-color: #006699;
+background-image: url(//www.ibm.com/i/v11/m/en/lines.gif);
+background-repeat: repeat;
+}
+.tbg {
+background-color: #006699;
+background-image: url(//www.ibm.com/i/v11/m/en/gr760.gif);
+}
+.tbgl { 
+background-color: #006699; 
+background-image: url(//www.ibm.com/i/v11/m/en/gr160.gif); 
+}
+.tbgc { background-color : #006699; }
+/* .bbg { background-color : #000000; vertical-align: middle; } */
+/* .dbg { background-color : #6699cc; } */
+.mbg { background-color : #99ccff; }
+.lbg { background-color : #cce5ff; }
+.hil { background-color : #ffffff; }
+.lgray { background-color: #cccccc; }
+.tbgray { background-color: #dddddd; }
+.greytext { color: #666666; }
+
+/* .country { color: #99ccff; font-family: Verdana, sans-serif; font-size: 10px; font-weight: bold; } */
+.related { color: #ffffff; font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; }
+
+a:link { color: #006699 }
+a:visited { color: #996699 }
+a:hover  { color: #006699 }
+
+/* a.rlinks:link { text-decoration: none; color: #ffffff; font-family: Arial, sans-serif; font-size: 12px; }
+a.rlinks:visited { text-decoration: none; color: #ffffff; font-family: Arial, sans-serif; font-size: 12px; }
+a.rlinks:hover { text-decoration: underline; color: #ffffff; font-family: Arial, sans-serif; font-size: 12px; } */
+
+a.highlight:link { text-decoration: none; color: #ffcc00; font-family: Verdana, Arial, sans-serif; font-size: 10px; font-weight: bold; }
+a.highlight:visited { text-decoration: none; color: #ffcc00; font-family: Verdana, Arial, sans-serif; font-size: 10px; font-weight: bold; }
+a.highlight:hover { text-decoration: underline; color: #ffcc00; font-family: Verdana, Arial, sans-serif; font-size: 10px; font-weight: bold; }
+
+/* a.mainlink:link { text-decoration: none; color: #ffffff; font-family: Verdana, Arial, sans-serif; font-size: 10px; font-weight: bold; }
+a.mainlink:visited { text-decoration: none; color: #ffffff; font-family: Verdana, Arial, sans-serif; font-size: 10px; font-weight: bold; }
+a.mainlink:hover { text-decoration: underline; color: #ffffff; font-family: Verdana, Arial, sans-serif; font-size: 10px; font-weight: bold; } */
+
+a.parent:link { text-decoration: none; color: #000000; font-family: Verdana, Arial, sans-serif; font-size: 10px; }
+a.parent:visited { text-decoration: none; color: #000000; font-family: Verdana, Arial, sans-serif; font-size: 10px; }
+a.parent:hover { text-decoration: underline; color: #000000; font-family: Verdana, Arial, sans-serif; font-size: 10px; }
+
+a.nav:link { text-decoration: none; color: #000000; font-family: Arial, sans-serif; font-size: 12px; }
+a.nav:visited { text-decoration: none; color: #000000; font-family: Arial, sans-serif; font-size: 12px; }
+a.nav:hover { text-decoration: underline; color: #000000; font-family: Arial, sans-serif; font-size: 12px; }
+
+a.fbox:link { text-decoration: none; color: #006699; font-family: Arial, sans-serif; font-size: 12px; }
+a.fbox:visited { text-decoration: none; color: #996699; font-family: Arial, sans-serif; font-size: 12px; }
+a.fbox:hover { text-decoration: underline; color: #006699; font-family: Arial, sans-serif; font-size: 12px; }
+
+a.bctl:link { text-decoration: none; color: #000000; font-family: Arial, sans-serif; font-size: 10px; }
+a.bctl:visited { text-decoration: none; color: #000000; font-family: Arial, sans-serif; font-size: 10px; }
+a.bctl:hover { text-decoration: underline; color: #000000; font-family: Arial, sans-serif; font-size: 10px; }
+
+.divider { color: #999999; font-family: Verdana, Arial, sans-serif; font-size: 10px; font-weight: normal; }
+.input { color: #000000 ;font-weight: normal; font-size: 11px; width: 150px; }
+.iform { color: #000000; font-family: Arial; background: #eeeeee; font-weight: normal; font-size: 11px; }
+
+body,p,b,i,strong,em,dt,dd,dl,sl,caption,th,td,tr,u,blink,select,option,form,div,font,li { font-family: Arial, sans-serif; font-size: 12px; }
+
+.title { font-family:  Arial, sans-serif; font-weight: normal; font-size: 24px; }
+.subtitle { font-family: Arial, sans-serif; font-weight: normal; font-size: 15px; }
+.boldtitle { font-family: "Arial Black", Arial, sans-serif; font-weight: normal; font-size: 24px; }
+
+.pagesubtitle { font-family: Arial, sans-serif; font-weight: normal; font-size: 15px; line-height: 18px;}
+.pagetitle { font-family: "Arial Black", Arial, sans-serif; font-weight: normal; font-size: 24px; line-height: 24px; }
+
+ul,ol { font-family: Arial, sans-serif; font-size: 12px; margin-top: 2px;  margin-bottom: 2px; padding-top: 2px; padding-bottom: 2px; }
+
+h1 { font-family: Arial, sans-serif; font-weight: normal; font-size: 35px; }
+h2 { font-family: Arial, sans-serif; font-weight: normal; font-size: 25px; }
+h3 { font-family: Arial, sans-serif; font-weight: bold; font-size: 22px; }
+h4 { font-family: Arial, sans-serif; font-weight: normal; font-size: 18px; }
+.small { font-family: Verdana, sans-serif; font-size: 11px; }
+.title1 { font-family: Arial, sans-serif; font-size: 25px; }
+
+.tbdark { background: #a3aab0; }
+.tbwhite { background: #ffffff; }
+.tbimage1 { background-image: url(//www.ibm.com/i/v11/tabs/tbimage1.gif); }
+.tbimage2 { background-image: url(//www.ibm.com/i/v11/tabs/tbimage2.gif); }
+a.tbmainlink:link { text-decoration: none; color: #333333; font-family: Verdana, Arial; font-weight: bold; font-size: 11px; }
+a.tbmainlink:visited { text-decoration: none; color: #333333; font-family: Verdana, Arial; font-weight: bold; font-size: 11px; }
+a.tbmainlink:hover { text-decoration: underline; color: #333333; font-family: Verdana, Arial; font-weight: bold; font-size: 11px; }
+a.tablink:link { text-decoration: none; color: #333333; font-family: Verdana, Arial; font-weight: normal; font-size: 11px; }
+a.tablink:visited { text-decoration: none; color: #333333; font-family: Verdana, Arial; font-weight: normal; font-size: 11px; }
+a.tablink:hover { text-decoration: underline; color: #333333; font-family: Verdana, Arial; font-weight: normal; font-size: 11px; }
+
+a.tablinkblue:link { text-decoration: none; font-family: Verdana, Arial; font-weight: normal; font-size: 11px; }
+a.tablinkblue:visited { text-decoration: none; font-family: Verdana, Arial; font-weight: normal; font-size: 11px; }
+a.tablinkblue:hover { text-decoration: underline; font-family: Verdana, Arial; font-weight: normal; font-size: 11px; }
+
+.tblue { color: #ffffff; background: #6699cc; font-family: Arial, sans-serif; font-weight: bold; font-size: 12px; }
+.tdblue { color: #ffffff; background: #006699; font-family: Arial, sans-serif; font-weight: bold; font-size: 12px; }
+.tgray { color: #ffffff; background: #666666; font-family: Arial, sans-serif; font-weight: bold; font-size: 12px; }
+.bct { color: #000000; font-family: Arial, sans-serif; font-weight: normal; font-size: 10px; }
+.fnt { font-family: Verdana, sans-serif; font-size: 11px; }
+.ast { color: #cc6600; }
+
+.bs:link { text-decoration: none; color: #006699; font-family: Verdana; font-si
+ze: 9px; }
+a.bs:visited { text-decoration: none; color: #996699; font-family: Verdana; font
+-size: 9px; }
+a.bs:hover { text-decoration: underline; color: #006699; font-family: Verdana; f
+ont-size: 9px; }
+
+img.pbl { margin-top: 7px; margin-bottom: 10px; }

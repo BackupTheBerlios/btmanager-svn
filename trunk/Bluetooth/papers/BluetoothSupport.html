@@ -1,0 +1,377 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+
+
+
+
+<title>BluetoothSupport - Ubuntu UDU Wiki</title><script type="text/javascript">
+<!--// common functions
+
+// We keep here the state of the search box
+searchIsDisabled = false;
+
+function searchChange(e) {
+    // Update search buttons status according to search box content.
+    // Ignore empty or whitespace search term.
+    var value = e.value.replace(/\s+/, '');
+    if (value == '' || searchIsDisabled) { 
+        searchSetDisabled(true);
+    } else {
+        searchSetDisabled(false);
+    }
+}
+
+function searchSetDisabled(flag) {
+    // Enable or disable search
+    document.getElementById('fullsearch').disabled = flag;
+    document.getElementById('titlesearch').disabled = flag;
+}
+
+function searchFocus(e) {
+    // Update search input content on focus
+    if (e.value == 'Search') {
+        e.value = '';
+        e.style.color = 'black';
+        searchIsDisabled = false;
+    }
+}
+
+function searchBlur(e) {
+    // Update search input content on blur
+    if (e.value == '') {
+        e.value = 'Search';
+        e.style.color = 'gray';
+        searchIsDisabled = true;
+    }
+}
+
+function actionsMenuInit(title) {
+    // Initiliaze action menu
+    for (i = 0; i < document.forms.length; i++) {
+        var form = document.forms[i];
+        if (form.className == 'actionsmenu') {
+            // Check if this form needs update
+            var div = form.getElementsByTagName('div')[0];
+            var label = div.getElementsByTagName('label')[0];
+            if (label) {
+                // This is the first time: remove label and do buton.
+                div.removeChild(label);
+                var dobutton = div.getElementsByTagName('input')[0];
+                div.removeChild(dobutton);
+                // and add menu title
+                var select = div.getElementsByTagName('select')[0];
+                var item = document.createElement('option');
+                item.appendChild(document.createTextNode(title));
+                item.value = 'show';
+                select.insertBefore(item, select.options[0]);
+                select.selectedIndex = 0;
+            }
+        }
+    }
+}
+//-->
+</script>
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="BluetoothSupport_files/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="BluetoothSupport_files/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="BluetoothSupport_files/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="BluetoothSupport_files/projection.css">
+
+<link rel="Start" href="http://udu.wiki.ubuntu.com/FrontPage">
+<link rel="Alternate" title="Wiki Markup" href="http://udu.wiki.ubuntu.com/BluetoothSupport?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="http://udu.wiki.ubuntu.com/BluetoothSupport?action=print">
+<link rel="Search" href="http://udu.wiki.ubuntu.com/FindPage">
+<link rel="Index" href="http://udu.wiki.ubuntu.com/TitleIndex">
+<link rel="Glossary" href="http://udu.wiki.ubuntu.com/WordIndex">
+<link rel="Help" href="http://udu.wiki.ubuntu.com/HelpOnFormatting"></head>
+
+<body dir="ltr" lang="en">
+
+
+
+
+<form id="searchform" method="get" action="">
+<div>
+<input name="action" value="fullsearch" type="hidden">
+<input name="context" value="180" type="hidden">
+<label style="display: none;" for="searchinput">Search:</label>
+<input style="color: gray;" id="searchinput" name="value" value="" size="20" onfocus="searchFocus(this)" onblur="searchBlur(this)" onkeyup="searchChange(this)" onchange="searchChange(this)" alt="Search" type="text">
+<input disabled="disabled" id="titlesearch" name="titlesearch" value="Titles" alt="Search Titles" type="submit">
+<input disabled="disabled" id="fullsearch" name="fullsearch" value="Text" alt="Search Full Text" type="submit">
+</div>
+</form>
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+//-->
+</script>
+
+<ul id="username"><li><a class="nonexistent" href="http://udu.wiki.ubuntu.com/CharlesMajola">CharlesMajola</a></li>
+<li><a href="http://udu.wiki.ubuntu.com/UserPreferences">UserPreferences</a></li></ul>
+<div id="logo"><a href="http://udu.wiki.ubuntu.com/FrontPage">Ubuntu UDU Wiki</a></div>
+
+<h1 id="title"><a title="Click to do a full-text search for this title" href="http://udu.wiki.ubuntu.com/BluetoothSupport?action=fullsearch&amp;value=linkto%3A%22BluetoothSupport%22&amp;context=180">BluetoothSupport</a></h1>
+
+
+<ul id="pagetrail">
+<li><a href="http://udu.wiki.ubuntu.com/LanguagePackRoadmap">LanguagePackRoadmap</a></li>
+<li><a href="http://udu.wiki.ubuntu.com/LinuxKernelRoadmap">LinuxKernelRoadmap</a></li>
+<li><a href="http://udu.wiki.ubuntu.com/NetworkMagic">NetworkMagic</a></li>
+<li><a href="http://udu.wiki.ubuntu.com/UbuntuDownUnder/BreezyGoals">BreezyGoals</a></li>
+</ul>
+<ul id="iconbar">
+<li><a title="Edit" href="http://udu.wiki.ubuntu.com/BluetoothSupport?action=edit"><img src="BluetoothSupport_files/moin-edit.png" alt="Edit" height="12" width="12"></a></li>
+<li><a title="View" href="http://udu.wiki.ubuntu.com/BluetoothSupport"><img src="BluetoothSupport_files/moin-show.png" alt="View" height="13" width="12"></a></li>
+<li><a title="Diffs" href="http://udu.wiki.ubuntu.com/BluetoothSupport?action=diff"><img src="BluetoothSupport_files/moin-diff.png" alt="Diffs" height="11" width="15"></a></li>
+<li><a title="Info" href="http://udu.wiki.ubuntu.com/BluetoothSupport?action=info"><img src="BluetoothSupport_files/moin-info.png" alt="Info" height="11" width="12"></a></li>
+<li><a title="Subscribe" href="http://udu.wiki.ubuntu.com/BluetoothSupport?action=subscribe"><img src="BluetoothSupport_files/moin-subscribe.png" alt="Subscribe" height="10" width="14"></a></li>
+<li><a title="Raw" href="http://udu.wiki.ubuntu.com/BluetoothSupport?action=raw"><img src="BluetoothSupport_files/moin-raw.png" alt="Raw" height="13" width="12"></a></li>
+<li><a title="Print" href="http://udu.wiki.ubuntu.com/BluetoothSupport?action=print"><img src="BluetoothSupport_files/moin-print.png" alt="Print" height="14" width="16"></a></li>
+</ul>
+
+
+<ul id="navibar">
+<li class="wikilink"><a href="http://udu.wiki.ubuntu.com/FrontPage">FrontPage</a></li>
+<li class="wikilink"><a href="http://udu.wiki.ubuntu.com/RecentChanges">RecentChanges</a></li>
+<li class="wikilink"><a href="http://udu.wiki.ubuntu.com/FindPage">FindPage</a></li>
+<li class="wikilink"><a href="http://udu.wiki.ubuntu.com/HelpContents">HelpContents</a></li>
+<li class="current"><a href="http://udu.wiki.ubuntu.com/BluetoothSupport">BluetoothSupport</a></li>
+</ul>
+
+
+
+
+
+<div id="page" dir="ltr" lang="en"><!-- start page -->
+
+<div id="content" dir="ltr" lang="en">
+<a id="top"></a>
+
+<h2 id="head-c339054c8dc8fbb80bf6aa08484192564b27d5bc">Bluetooth Networking Support</h2>
+
+
+<h3 id="head-0e6b67a53cc40853b84ebbf6717ef75678f9fb95">Status</h3>
+
+<ul>
+<li><p> Created: 20/04/05 by <a href="http://udu.wiki.ubuntu.com/MarkShuttleworth">MarkShuttleworth</a><br>
+ </p>
+</li>
+<li><p> Priority: <a href="http://udu.wiki.ubuntu.com/HighPriority">HighPriority</a><br>
+ </p>
+</li>
+<li><p> People: <a class="nonexistent" href="http://udu.wiki.ubuntu.com/MartinPittLead">MartinPittLead</a>, <a class="nonexistent" href="http://udu.wiki.ubuntu.com/ThomMaySecond">ThomMaySecond</a><br>
+ </p>
+</li>
+<li><p> Contributors: <a href="http://udu.wiki.ubuntu.com/MarkShuttleworth">MarkShuttleworth</a>, <a href="http://udu.wiki.ubuntu.com/MatthiasUrlichs">MatthiasUrlichs</a><br>
+ </p>
+</li>
+<li><p> Interested: <a href="http://udu.wiki.ubuntu.com/MarkShuttleworth">MarkShuttleworth</a>, <a href="http://udu.wiki.ubuntu.com/DanielHolbach">DanielHolbach</a>, <a href="http://udu.wiki.ubuntu.com/JimMcQuillan">JimMcQuillan</a>, <a href="http://udu.wiki.ubuntu.com/AndrewFitzsimon">AndrewFitzsimon</a> <br>
+ </p>
+</li>
+<li><p> Status: <a class="nonexistent" href="http://udu.wiki.ubuntu.com/EditedSpecification">EditedSpecification</a>, <a class="nonexistent" href="http://udu.wiki.ubuntu.com/BreezyGoal">BreezyGoal</a>, <a class="nonexistent" href="http://udu.wiki.ubuntu.com/DistroSpec">DistroSpec</a>,<a class="nonexistent" href="http://udu.wiki.ubuntu.com/MarkShuttleworthQueue">MarkShuttleworthQueue</a><br>
+ </p>
+</li>
+<li><p> Branch: <br>
+ </p>
+</li>
+<li><p> Malone Bug: <br>
+ </p>
+</li>
+<li><p> Packages: <br>
+ </p>
+</li>
+<li><p> Depends: <br>
+ </p>
+</li>
+</ul>
+
+<h3 id="head-c80233c79abe269a051b3f6e359dce66cfb13641">Introduction</h3>
+
+<p>This specification describes goals for Bluetooth support in the Breezy Badger release of Ubuntu. </p>
+
+<h3 id="head-7992baf1b356e0f8d4855fb404b3a863eff9dc2e">Rationale</h3>
+
+<p>Bluetooth is finally emerging as a robust and widely supported local
+area communications technology, for short-distance wireless data
+transfer. Bluetooth is being used for communications with cellphones,
+cameras, headsets and microphones, PDA's and storage devices. Many of
+these are associated with mobile computer usage, and Ubuntu aims to be
+the best OS for the mobile professional, making slick Bluetooth support
+essential. </p>
+
+<h3 id="head-e9d2d74f2bb04628a2c9c630b0ed3e578b381b8e">Scope and Use Cases</h3>
+
+<p>We would like to cover the following use cases: </p>
+<ul>
+<li><p> Joe has bought a new GSM cellphone, which includes Bluetooth
+networking and a GPRS account. Using only GUI tools, with a minimum of
+clicks, he connects to the Internet from his Ubuntu laptop via his
+cellphone and Bluetooth. Ubuntu handles the detection of the laptop,
+assignment of IP addresses to create point to point connection between
+phone and laptop, and the initialization of network routes to the net
+via the phone. </p>
+</li>
+<li class="gap"><p> Sarah has a new Bluetooth headset. With minimal
+effort she configures her laptop to use that Bluetooth headset for VoIP
+calls using Shtoom. She uses only GUI tools to setup the headset and
+activate it or disable it. </p>
+</li>
+<li class="gap"><p> Pete has bought a new Palm PDA, with Bluetooth
+support. With minimal effort and using only GUI tools he backs up all
+the data from his old USB Palm onto his laptop. He then restores that
+data onto the new Palm, using Bluetooth wireless networking. </p>
+</li>
+<li class="gap"><p> Andy has purchased a new Bluetooth wireless mouse. With only two clicks he enables the use of the mouse in Ubuntu. </p>
+</li>
+</ul>
+
+<h3 id="head-f2d1f118d4709090b98462b1eb143218c90b0002">Implementation Plan</h3>
+
+<ul>
+<li><p> Integrate GPE bluetooth tools into Ubuntu </p>
+</li>
+<li><p> By default, enable bluetooth usage in a sane and secure fashion </p>
+</li>
+<li><p> integrate the bluetooth-sco drivers into the kernel </p>
+</li>
+<li><p> investigate potential bounties for <a class="external" href="http://www.opensync.org/"><img src="BluetoothSupport_files/moin-www.png" alt="[WWW]" height="11" width="11"> OpenSYNC</a> to drive bluetooth integration with Evolution and Thunderbird </p>
+</li>
+<li><p> Extend Network Admin tool to use bluetooth devices correctly </p>
+</li>
+</ul>
+<p>The GPE environment provides a set of mature bluetooth graphical
+configuration and usage tools which are gtk based and operate on the
+standard Linux bluetooth stack. </p>
+<p>Integrating these tools into the Ubuntu distribution will enable us
+to leverage this development track whilst making easy customisations to
+satisfy our own requirements. This enables us to build the underlying
+graphical tools such as browsing of devices and pairing with those
+devices. </p>
+<p>Installing bluetooth by default in the distribution will allow us to
+usefully integrate bluetooth support at the lower levels with the
+minimum of user interaction whilst still providing a secure-by-default
+installation, since enabling the tools will happen at the graphical
+level. </p>
+<p>The bluetooth-sco drivers provide support for two way audio on
+bluetooth headsets, and once these devices are paired correctly ALSA
+should be easily configured to use them. </p>
+<p><a class="nonexistent" href="http://udu.wiki.ubuntu.com/OpenSync">OpenSync</a>
+currently is very immature. It needs work on both the various plugins
+for integration with PIMs and also the underlying codebase for
+stability and feature additions. </p>
+<p>Network Admin should be extended so that /dev/rfcomm devices show up in <a class="nonexistent" href="http://udu.wiki.ubuntu.com/NetworkAdmin">NetworkAdmin</a> ready to be configured as PPP devices.  </p>
+
+<h4 id="head-bd037c6673ae95494db01a829543ac225da3fdf2">Current status</h4>
+
+<ul>
+<li><p> None of the above use cases (which involve higher level
+protocols) can be achieved with existing tools. They are good bounty
+targets, though. </p>
+</li>
+<li><p> <tt>gnome-phone-manager</tt>: cellphone-specific communication protocols for sending and receiving SMS; supports BT </p>
+</li>
+<li><p> gnome-Bluetooth includes an applet for receiving files from OBEX transfers </p>
+</li>
+<li><p> <tt>gnome-Bluetooth-manager</tt>: displays a list of discovered Bluetooth devices, but the user cannot actually do something with them </p>
+</li>
+<li><p> <tt>gnome-modem-applet</tt> can be configured to setup a PPP link over a Bluetooth cellphone </p>
+</li>
+<li><p> GTK-based GPE (<a class="external" href="http://gpe.handhelds.org/"><img src="BluetoothSupport_files/moin-www.png" alt="[WWW]" height="11" width="11"> GPE</a>)
+has some Bluetooth support in a gnome-bluetooth-manager style
+application. It allows some amount of configuration of Bluetooth
+devices. </p>
+</li>
+<li><p> <a class="nonexistent" href="http://udu.wiki.ubuntu.com/OpenSync">OpenSync</a> looks promising and has a nice client/server architecture, but will not be ready in the Breezy timeframe. </p>
+</li>
+</ul>
+
+<h4 id="head-42e5fb06a16c593f1fb7a2065e7bf1e5ee51684e">Data Preservation and Migration</h4>
+
+
+<h4 id="head-812105dc2853691ccd6c2b8c7598119efdd929a4">Packages Affected</h4>
+
+<ul>
+<li><p> hcid provides basic authentication and link/pair management; basically works (<tt>bluez</tt> package). </p>
+</li>
+<li><p> There is beginning BT support in hal, but it is far from complete. </p>
+</li>
+<li><p> GPE or gnome-Bluetooth-manager should be extended to support dbus. </p>
+</li>
+</ul>
+
+<h4 id="head-0b97be1d6796ea98733b9e9d4254e70e11095166">User Interface Requirements</h4>
+
+<ul>
+<li><p> Bluetooth manager needs to be extended to: 1) Use HAL to
+enumerate devices 2) Based on the type of device, launch something that
+can do something with it. In a lot of cases, the command line tools to
+do this exist already - low hanging option may be to use gksudo, zenity
+and shell scripting to work with these. </p>
+<p>This should deal with use cases 1, 2 and 4. </p>
+</li>
+<li class="gap"><p> Synchronization requires opensync to reach a useful state. Not there yet. </p>
+<p>Use case 3 is not practical within the Breezy timeframe unless opensync stabilizes rapidly. </p>
+</li>
+<li class="gap"><p> gnome-phone-manager displays cellphones and sets up terminal device, but does not connect to the cellphone </p>
+</li>
+<li class="gap"><p> network-admin does not display cellphone terminal devices; it should display rfcomm devices </p>
+</li>
+<li class="gap"><p> gnome-vfs should be extended to support
+gnome-obex-send to display files of cellphones and allow to "Send
+To..." files to the phone </p>
+</li>
+</ul>
+
+<h3 id="head-f249d5e08c69729b1ad26ae652a3deb700685631">Outstanding Issues</h3>
+
+
+<h4 id="head-90229a353d791fabb26aff74bf51a83bd09a53e0">UDU BOF Agenda</h4>
+
+<ul>
+<li><p> multisync (added by <a href="http://udu.wiki.ubuntu.com/DanielHolbach">DanielHolbach</a>) - superseded by Opensync, works badly, PAIN AND SUFFERING </p>
+</li>
+<li><p> bluez default PIN from upstream is set to <em>BlueZ</em>; it should be replaced to something phones find easier to enter (like <em>12345</em> maybe) (added by <a href="http://udu.wiki.ubuntu.com/ColinCharles">ColinCharles</a>) </p>
+</li>
+<li><p> Excellent <a class="external" href="http://www-106.ibm.com/developerworks/library/wi-enable.html"><img src="BluetoothSupport_files/moin-www.png" alt="[WWW]" height="11" width="11"> overview</a> of how various BT/IrDA components fit together  (Developer Works) -<a href="http://udu.wiki.ubuntu.com/PaulSladen">PaulSladen</a> </p>
+</li>
+</ul>
+
+<h4 id="head-0e8ce45eff4566ec36a83db5b7eb0735456a46d5">Links</h4>
+
+<p><a href="https://bugtrack.alsa-project.org/alsa-bug/view.php?id=480"><img src="BluetoothSupport_files/moin-www.png" alt="[WWW]" height="11" width="11"> https://bugtrack.alsa-project.org/alsa-bug/view.php?id=480</a> </p>
+<p><a href="http://bluetooth-alsa.sourceforge.net/"><img src="BluetoothSupport_files/moin-www.png" alt="[WWW]" height="11" width="11"> http://bluetooth-alsa.sourceforge.net/</a> </p>
+<p><a href="http://www.dcs.gla.ac.uk/%7Ejp/snd-bt-sco/"><img src="BluetoothSupport_files/moin-www.png" alt="[WWW]" height="11" width="11"> http://www.dcs.gla.ac.uk/~jp/snd-bt-sco/</a> </p>
+<p><a href="http://udu.wiki.ubuntu.com/BluetoothSupport"><img src="BluetoothSupport_files/moin-www.png" alt="[WWW]" height="11" width="11"> http://udu.wiki.ubuntu.com/BluetoothSupport</a> </p>
+<p><a href="https://bugzilla.ubuntu.com/show_bug.cgi?id=8867"><img src="BluetoothSupport_files/moin-www.png" alt="[WWW]" height="11" width="11"> https://bugzilla.ubuntu.com/show_bug.cgi?id=8867</a> </p>
+<p><a href="http://gbtcr.chileforge.cl/"><img src="BluetoothSupport_files/moin-www.png" alt="[WWW]" height="11" width="11"> http://gbtcr.chileforge.cl/</a> </p>
+<a id="bottom"></a>
+
+</div>
+
+</div> <!-- end page -->
+
+
+
+
+<div id="footer">
+<a href="http://udu.wiki.ubuntu.com/BluetoothSupport?action=refresh">DeleteCache</a> (cached 2005-06-08 07:56:12)
+<p><a href="http://udu.wiki.ubuntu.com/BluetoothSupport?action=edit">EditText</a> (last edited 2005-06-08 07:56:12 by <span title="port-212-202-251-34.static.qsc.de">TobiasJakobs</span>)</p>
+<p>Or try one of these actions: <a href="http://udu.wiki.ubuntu.com/BluetoothSupport?action=AttachFile">Attachments</a>, <a href="http://udu.wiki.ubuntu.com/BluetoothSupport?action=DeletePage">Delete Page</a>, <a href="http://udu.wiki.ubuntu.com/BluetoothSupport?action=LikePages">Like Pages</a>, <a href="http://udu.wiki.ubuntu.com/BluetoothSupport?action=LocalSiteMap">Local Site Map</a>, <a href="http://udu.wiki.ubuntu.com/BluetoothSupport?action=RenamePage">Rename Page</a>, <a href="http://udu.wiki.ubuntu.com/BluetoothSupport?action=SpellCheck">Spell Check</a></p>
+
+</div>
+<ul id="credits">
+<li><a href="http://moinmoin.wikiwikiweb.de/">MoinMoin Powered</a></li>
+<li><a href="http://www.python.org/">Python Powered</a></li>
+<li><a href="http://validator.w3.org/check?uri=referer">Valid HTML 4.01</a></li>
+</ul>
+
+
+
+
+</body></html>

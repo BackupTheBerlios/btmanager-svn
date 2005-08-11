@@ -1,0 +1,725 @@
+<html><head><!--XSLT stylesheet used to transform this file:  dw-document-html-4.0.xsl--><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Linux wireless networking</title><meta http-equiv="PICS-Label" content="(PICS-1.1
+    &quot;http://www.icra.org/ratingsv02.html&quot; l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1)
+    &quot;http://www.rsac.org/ratingsv01.html&quot; l gen true r (n 0 s 0 v 0 l 0)
+    &quot;http://www.classify.org/safesurf/&quot; l gen true r (SS~~000 1))"><meta content="0" http-equiv="Expires"><meta content="Linux, WLAN, Bluetooth, GPRS, GSM, Infrared Data" name="KEYWORDS"><meta name="ABSTRACT" content="These days you cannot talk about computers and networks without thinking of Linux and wireless networking. In this article, Sreekrishnan Venkateswaran explains wireless networking with WLAN, Bluetooth, GPRS, GSM, and IrDA from a Linux perspective. He uses various wireless devices and the corresponding kernel layers and user space tools to demonstrate how they work with Linux.">
+<meta name="DESCRIPTION" content="These days you cannot talk about computers and networks without thinking of Linux and wireless networking. In this article, Sreekrishnan Venkateswaran explains wireless networking with WLAN, Bluetooth, GPRS, GSM, and IrDA from a Linux perspective. He uses various wireless devices and the corresponding kernel layers and user space tools to demonstrate how they work with Linux."><meta name="TITLE" content="Linux wireless networking">
+<meta name="OWNER" content=" https://www-136.ibm.com/developerworks/secure/feedback.jsp?domain="><meta name="DC.Date" scheme="iso8601" content="2004-03-02"><meta name="DC.Language" scheme="rfc1766" content="en-us"><meta name="IBM.Country" content="zz"><meta name="Last update" content=""><meta name="SECURITY" content="Public"><meta name="DC.Rights" content="Copyright (c) 2004 by IBM Corporation"> <meta name="ROBOTS" content="index,follow"><script type="text/javascript" language="JavaScript" src="wi-enable_files/dwcss.js"><noscript><link type="text/css" href="http://www-106.ibm.com/developerworks/css/r1ss.css" rel="stylesheet"/></noscript><script src="/developerworks/js/spinbox.js" language="JavaScript" type="text/javascript"></script><link rel="stylesheet" href="wi-enable_files/r1ss.css" type="text/css"><script language="JavaScript" type="text/javascript">var title = "Linux wireless networking"; </script><script language="JavaScript" type="text/javascript">var forumURL = ""; </script><script language="JavaScript" type="text/javascript">var contentAreaList = ""; </script><script src="wi-enable_files/forumwindow.js" language="JavaScript" type="text/javascript"></script><script language="JavaScript" type="text/javascript">var emailAbstract = "These days you cannot talk about computers and networks without thinking of Linux and wireless networking. In this article, Sreekrishnan Venkateswaran explains wireless networking with WLAN, Bluetooth, GPRS, GSM, and IrDA from a Linux perspective. He uses various wireless devices and the corresponding kernel layers and user space tools to demonstrate how they work with Linux."; </script><script src="wi-enable_files/grabtitle.js" language="JavaScript" type="text/javascript"></script><script src="wi-enable_files/emailfriend2.js" language="JavaScript" type="text/javascript"></script></head><body leftmargin="2" topmargin="2" bgcolor="#ffffff" marginheight="2" marginwidth="2"><!-- begin masthead dw liquid -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="bbg" width="110"><a href="http://www.ibm.com/"><img alt="IBM®" src="wi-enable_files/ibm-logo.gif" border="0" height="52" width="110"></a></td>
+<td class="bbg"><img src="wi-enable_files/c.gif" alt="" border="0" height="1" width="1"></td>
+<td class="mbbg" align="right" width="650">
+<table align="right" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="cty-tou">
+<td rowspan="2" class="upper-masthead-corner" width="17"><a href="#main"><img src="wi-enable_files/c_002.gif" alt="Skip to main content" border="0" height="1" width="1"></a></td>
+<td align="left">
+<table align="left" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td><span class="spacer">&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="country">Country/region</b><span class="spacer">&nbsp;[</span><a class="ur-link" href="http://www.ibm.com/developerworks/country/">select</a><span class="spacer">]</span></td>
+<td class="upper-masthead-divider" width="29">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td align="left"><a class="ur-link" href="http://www.ibm.com/legal/">Terms of use</a></td>
+</tr>
+</tbody></table>
+</td>
+<td width="40">&nbsp;</td>
+</tr>
+<tr>
+<td class="cty-tou-border" colspan="2" height="1"><img src="wi-enable_files/c_002.gif" alt="" height="1" width="1"></td>
+</tr>
+<tr>
+<td colspan="3"><img alt="" src="wi-enable_files/c_002.gif" height="8" width="1"></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td colspan="2" align="center">
+<input name="searchType" value="1" type="hidden"><input value="dW" name="searchSite" type="hidden">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<form method="get" action="http://www-128.ibm.com/developerworks/search/searchResults.jsp" id="form1" name="form1"></form><td width="1"><label for="q"><img src="wi-enable_files/c_002.gif" alt="Select a scope:" height="1" width="1"></label></td>
+<td align="right"><select id="sq" name="searchScope" class="input-scope"><option value="dW">All of dW</option><option value="dW">-----------------</option><option value="db2">&nbsp;&nbsp;DB2</option><option value="eserver">&nbsp;&nbsp;eServer</option><option value="lotus">&nbsp;&nbsp;Lotus</option><option value="rdd">&nbsp;&nbsp;Rational</option><option value="tivoli">&nbsp;&nbsp;Tivoli</option><option value="WSDD">&nbsp;&nbsp;WebSphere</option><option value="dW">-----------------</option><option value="acZ">&nbsp;&nbsp;Autonomic computing</option><option value="gridZ">&nbsp;&nbsp;Grid computing</option><option value="javaZ">&nbsp;&nbsp;Java technology</option><option value="linuxZ">&nbsp;&nbsp;Linux</option><option value="opensrcZ">&nbsp;&nbsp;Open source</option><option value="paZ">&nbsp;&nbsp;Power Architecture</option><option value="webservZ">&nbsp;&nbsp;SOA &amp; Web services</option><option value="webarchZ">&nbsp;&nbsp;Web architecture</option><option value="wirelessZ">&nbsp;&nbsp;Wireless</option><option value="xmlZ">&nbsp;&nbsp;XML</option><option value="dW">-----------------</option><option value="forums">&nbsp;&nbsp;dW forums</option><option value="dW">-----------------</option><option value="toolbox">&nbsp;&nbsp;dW Subscription</option><option value="dW">-----------------</option><option value="aW">alphaWorks</option><option value="dW">-----------------</option><option value="all">All of IBM</option></select></td>
+<td align="right" width="1"><label for="q"><img src="wi-enable_files/c_002.gif" alt="Search for:" height="1" width="1"></label>&nbsp;&nbsp;</td>
+<td align="right"><input class="input" id="q" maxlength="100" name="query" size="15" value="" type="text">
+</td>
+<td width="7">&nbsp;
+</td>
+<td><input alt="Search" name="Search" src="wi-enable_files/search.gif" value="Search" type="image"></td>
+<td width="20">&nbsp;</td>
+</tr>
+</tbody></table>
+
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td class="blbg" colspan="3">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td><span class="spacer">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+<td><a class="masthead-mainlink" href="http://www.ibm.com/">Home</a></td>
+<td class="masthead-divider" width="27">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a class="masthead-mainlink" href="http://www.ibm.com/products/">Products</a></td>
+<td class="masthead-divider" width="27">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a class="masthead-mainlink" href="http://www.ibm.com/servicessolutions/">Services &amp; solutions</a></td>
+<td class="masthead-divider" width="27">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a class="masthead-mainlink" href="http://www.ibm.com/support/">Support &amp; downloads</a></td>
+<td class="masthead-divider" width="27">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a class="masthead-mainlink" href="http://www.ibm.com/account/">My account</a></td>
+<td><span class="spacer">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+<!--
+<script src="//www.ibm.com/common/v14/pmh.js" language="JavaScript" type="text/javascript"></script>
+-->
+<!-- end masthead dw liquid --><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr valign="top"><td width="5"><img alt="" src="wi-enable_files/c.gif" border="0" height="1" width="5"></td><td width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr valign="top"><td width="100%"><img alt="" src="wi-enable_files/c.gif" border="0" height="4" width="2"><br><a href="http://www-136.ibm.com/developerworks/" class="dwbctl">developerWorks</a>  &gt; <a class="dwbctl" href="http://www-136.ibm.com/developerworks/wireless">Wireless</a> &gt;
+              </td><td align="right" width="136"><a href="http://www-136.ibm.com/developerworks/"><img alt="developerWorks" src="wi-enable_files/dwlogo-small.gif" border="0" height="24" width="136"></a></td><td width="5"><img alt="" src="wi-enable_files/c.gif" border="0" height="1" width="5"></td></tr></tbody></table></td></tr></tbody></table><a name="main"></a><a name="top"></a><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr valign="top"><td colspan="5"><img alt="" src="wi-enable_files/c.gif" border="0" height="15" width="5"></td></tr><tr valign="top"><td width="2"><img alt="" src="wi-enable_files/c.gif" border="0" height="1" width="2"></td><td><span class="atitle">Linux wireless networking</span></td><td width="8"><img alt="" src="wi-enable_files/c.gif" border="0" height="1" width="8"></td><td align="right" width="180"><img alt="" src="wi-enable_files/c.gif" border="0" height="1" width="180"><br><nobr><a href="ftp://www6.software.ibm.com/software/developer/library/wi-enable.pdf" onkeypress="sa_onclick(this.href)" onclick="sa_onclick(this.href)"><img alt="88 KB" src="wi-enable_files/icon-pdf.gif" border="0" height="26" width="35"></a><a href="javascript:void newWindow()"><img alt="e-mail it!" src="wi-enable_files/icon-email.gif" border="0" height="26" width="46"></a></nobr></td><td width="6"><img alt="" src="wi-enable_files/c.gif" border="0" height="1" width="6"></td></tr><tr valign="top"><td colspan="5" bgcolor="#000000"><img alt="" src="wi-enable_files/c.gif" border="0" height="1" width="100"></td></tr><tr valign="top"><td colspan="5" bgcolor="#ffffff"><img alt="" src="wi-enable_files/c.gif" border="0" height="8" width="100"></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr valign="top"><td width="5"><img alt="" src="wi-enable_files/c.gif" border="0" height="1" width="5"></td><td width="100%"><table align="right" border="0" cellpadding="0" cellspacing="0" width="168"><tbody><tr><td width="8"><img alt="" src="wi-enable_files/c.gif" height="21" width="5"></td><td width="160"><table border="0" cellpadding="0" cellspacing="0" width="160"><tbody><tr><td bgcolor="#000000" height="1" width="160"><img alt="" src="wi-enable_files/c.gif" height="1" width="160"></td></tr><tr><td align="center" background="wi-enable_files/bg-gold.gif" height="5"><b>Contents:</b></td></tr><tr><td bgcolor="#666666" height="1" width="160"><img alt="" src="wi-enable_files/c.gif" height="1" width="160"></td></tr><tr><td><table border="0" cellpadding="0" cellspacing="0" width="160"><tbody><tr><td><a href="#1">Linux 802.11 WLAN</a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td><a href="#0">Linux WLAN support</a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td><a href="#0">The Intersil Prism2 WLAN CF card</a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td><a href="#2">Linux Bluetooth</a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td><a href="#0">Sharp Bluetooth CF card</a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td><a href="#0">The Belkin Bluetooth USB Adapter</a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td><a href="#0">A board with a built-in CSR Bluetooth chipset </a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td><a href="#0">Sony HBH-30 Bluetooth Headset</a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td><a href="#3">Linux GPRS and Data over GSM</a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td><a href="#4">Linux Infrared Data</a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td><a href="#5">Performance issues</a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td><a href="#6">Conclusion</a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><!--Standard links for every dw-article--><tr><td><a href="#resources">Resources</a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td><a href="#author1">About the author</a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td><a href="#rating">Rate this article</a></td></tr><tr><td><img alt="" src="wi-enable_files/c.gif" height="10" width="160"></td></tr></tbody></table></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="160"><tbody><tr><td bgcolor="#000000" height="1" width="160"><img alt="" src="wi-enable_files/c.gif" height="1" width="160"></td></tr><tr><td align="center" background="wi-enable_files/bg-gold.gif" height="5"><b>Related content:</b></td></tr><tr><td bgcolor="#666666" height="1" width="160"><img alt="" src="wi-enable_files/c.gif" height="1" width="160"></td></tr><tr><td><table border="0" cellpadding="1" cellspacing="0" width="160"><tbody><tr><td><a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://www-106.ibm.com/developerworks/wireless/library/wi-tip24.html">Managing mobile profiles</a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td><a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://www-106.ibm.com/developerworks/wireless/edu/wi-dw-wilinux-i.html">Linux links wirelessly</a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td><a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://www-106.ibm.com/developerworks/wireless/library/wi-p2papps.html">Open source wireless tools emerge</a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td><a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://www-106.ibm.com/developerworks/linux/library/l-wap.html">Building a wireless access point on Linux</a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr></tbody></table></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="160"><tbody><tr><td bgcolor="#000000" height="1" width="160"><img alt="" src="wi-enable_files/c.gif" height="1" width="160"></td></tr><tr><td align="center" background="wi-enable_files/bg-gold.gif" height="5"><b>Subscriptions:</b></td></tr><tr><td bgcolor="#666666" height="1" width="160"><img alt="" src="wi-enable_files/c.gif" height="1" width="160"></td></tr><tr><td><table border="0" cellpadding="1" cellspacing="0" width="160"><tbody><tr><td><a href="http://www-106.ibm.com/developerworks/newsletter/">dW newsletters</a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td><a href="http://www-106.ibm.com/developerworks/subscription/">dW Subscription<br xmlns:fo="http://www.w3.org/1999/XSL/Format">(CDs and downloads)</a></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr><tr><td height="1"><img alt="" src="wi-enable_files/c.gif" height="5" width="160"></td></tr></tbody></table></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="160"><tbody><tr><td colspan="2" bgcolor="#000000" height="2" width="150"><img alt="" src="wi-enable_files/c.gif" height="2" width="160"></td></tr><tr><td colspan="2" bgcolor="#ffffff" height="2" width="150"><img alt="" src="wi-enable_files/c.gif" height="2" width="160"></td></tr></tbody></table></td></tr></tbody></table><span class="atitle2">A look at WLAN, Bluetooth, GPRS, GSM, and Infrared Data on Linux</span><br><table border="0" cellpadding="0" cellspacing="0"><tbody><tr align="left" valign="top"><td><p>Level: Intermediate</p></td></tr></tbody></table><p><a href="#author1"><name>Sreekrishnan Venkateswaran</name></a> (<a href="mailto:s_krishna@in.ibm.com?cc=&amp;subject=Linux%20wireless%20networking">s_krishna@in.ibm.com</a>)<br>Staff Software Engineer, IBM India<br> 02 Mar  2004</p><blockquote>These
+days you cannot talk about computers and networks without thinking of
+Linux and wireless networking. In this article, Sreekrishnan
+Venkateswaran explains wireless networking with WLAN, Bluetooth, GPRS,
+GSM, and IrDA from a Linux perspective. He uses various wireless
+devices and the corresponding kernel layers and user space tools to
+demonstrate how they work with Linux.</blockquote>
+
+<p>
+Wireless technologies like WLAN (Wireless Local Area Network),
+Bluetooth, GPRS (General Packet Radio Service), GSM (Global System for
+Mobile communications), and IrDa (Infrared Data) serve different
+niches. While WLAN supports higher speeds and longer range than
+Bluetooth, it also has higher costs and higher power consumption. GPRS
+is slower than Bluetooth and WLAN, but can be used on the move. Despite
+their diversity, or rather because of it, devices with multiple
+wireless capabilities can use them in tandem. For example, a device can
+switch transparently from GPRS on the road to a cheaper WLAN in an
+Internet cafe for network connectivity, depending on location input
+from a GPS module. A cell phone can communicate through Bluetooth to a
+heart rate monitor and send an alert over GSM to a doctor if the
+patient's heart rate crosses a certain threshold.</p>
+
+<p>
+These wireless technologies are widely available today in the form of
+PCMCIA or Compact Flash (CF) cards, or as USB devices. Most computer
+systems, including embedded devices, have PCMCIA, CF, or USB
+interfaces, thus instantly enabling them to take advantage of wireless
+technologies even if they do not have built-in support for them. This
+article examines examples of such wireless devices and explores the
+respective Linux implementations of the device drivers, bus
+technologies, and protocols.</p>
+
+<p>
+You'll first see how WLAN devices work on Linux by tracing the code
+flow for an example WLAN card. Then you'll see how several Bluetooth
+devices interface with the Linux Bluetooth stack and other kernel
+layers. Next, you'll learn how to get GPRS and GSM devices to work with
+Linux. The article ends with the examination of Linux IrDa support and
+a brief look at performance issues faced by wireless networking devices.</p>
+
+<p>
+<b xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">Note:</b>
+The kernel data structures and file names referred to in this article
+are those used in current Linux versions. The file names are relative
+to the root of the Linux kernel source tree.</p>
+
+<p><a name="1"><span class="atitle2">Linux 802.11 WLAN</span></a><br>A
+WLAN communication system acts as an alternative to wired LAN and is
+generally used within a building. WLAN uses the ISM (Industrial,
+Scientific, Medical) radio-band frequency for communication. WLAN's
+802.11a standard uses the 5 GHz band and supports a maximum speed of 54
+Mbps, while the 802.11b and the 802.11g standards use the 2.4 GHz band
+and support maximum speeds of 11 Mbps and 54 Mbps, respectively.</p>
+
+
+<p>
+WLAN resembles wired Ethernet in that both are assigned MAC (Media
+Access Control) addresses from the same address pool and both appear to
+the operating system network-device layer as Ethernet devices. For
+instance, ARP (Address Resolution Protocol) tables are populated with
+WLAN MAC addresses alongside Ethernet MAC addresses.</p>
+
+<p>
+WLAN and wired Ethernet, however, differ significantly at the link
+layer. The 802.11 standard, for example, uses collision avoidance
+(CSMA/CA) instead of collision detection (CSMA/CD) used by wired
+Ethernet. Moreover, WLAN frames, unlike Ethernet frames, are
+acknowledged.</p>
+
+<p> Because of fuzzy boundaries between WLAN stations, the WLAN link
+layer has a protocol to clear out an area before transmission. For
+security, WLAN's Wired Equivalent Privacy (WEP) encryption mechanism
+provides a level of security equivalent to wired networks. WEP combines
+a 40-bit or a 104-bit key with a random 24-bit initialization vector to
+encrypt/decrypt data. WLAN supports two modes of communication: <i xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">Ad Hoc mode</i> for communication between a small group of stations for a short period of time without using an access point, and <i xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">Infrastructure mode</i>
+where all communication passes through an access point. Access points
+periodically broadcast a Service Set Identifier (SSID) that identifies
+one WLAN network from another.</p>
+
+<p>
+Most available WLAN cards are either based on the Intersil Prism
+chipset or the Lucent Hermes chipset. Compaq, Nokia, Linksys, and
+D-Link cards use the Prism chipset, while the Lucent Orinoco card and
+the Apple Airport use the Hermes chipset.</p>
+
+<p><a name="0"><span class="atitle3">Linux WLAN support</span></a><br>Linux support for WLAN broadly consists of a WLAN API implementation and WLAN device drivers. I'll look at them in turn. </p>
+
+
+<p>
+Two Linux projects define a generic WLAN API and provide tools to let
+user-space applications configure parameters and access information
+from WLAN device drivers. The Wireless Extensions project provides a
+common Linux user space interface for different wireless cards. The
+project's tools include iwconfig to configure parameters like WEP keys
+and SSIDs in the WLAN driver. The linux-wlan project, for its part,
+also supports a set of tools that talk to WLAN device drivers from user
+space. These utilities, unlike the ones based on Wireless Extensions,
+use an SNMP (Simple Network Management Protocol) MIB (Management
+Information Base)-like syntax that mirrors the IEEE 802.11
+specification. (See <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="#resources">Resources</a> for more on the projects.)</p>
+
+<p>
+Moving on to device drivers, the Linux device drivers that support popular WLAN cards include:</p>
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">
+<li><b>The Orinoco WLAN driver:</b> Part of the Linux kernel sources, supports both Hermes-based cards and Intersil Prism-based cards. The <code>orinoco_cs</code> module provides PCMCIA card services support needed for PCMCIA and CF cards.<br><br></li>
+
+<li><b>The linux-wlan project's linux-wlan-ng driver:</b> Supports a
+variety of cards based on the Prism chipset. The driver supports the
+linux-wlan API and partially supports Wireless Extensions.<br><br></li>
+
+<li><b>The Host AP device driver:</b> Supports the Host AP mode of Prism chipsets that lets a WLAN host act as an access point.<br><br></li>
+
+<li><b>The Linux Symbol Spectrum device driver:</b> Supports Symbol
+PCMCIA cards. The Symbol CF card, unlike the PCMCIA card, lacks
+firmware on the card and depends on the device driver to download the
+firmware. A separate version of the driver works for the CF card. Intel
+repackages the Symbol PCMCIA card as the Intel PRO/Wireless card, while
+Socket communications repackages the Symbol CF card.<br><br></li>
+ 
+<li><b>The Atmel USB WLAN driver:</b> Supports many USB WLAN devices using Atmel chipsets.<br><br></li>
+</ul>
+
+<p>
+See <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="#resources">Resources</a> for information on drivers for these devices.</p>
+
+<p><a name="0"><span class="atitle3">The Intersil Prism2 WLAN CF card</span></a><br>I'll
+review the Intersil Prism2 802.11b WLAN CF card to show you how it
+works with the Linux PCMCIA, network devices, and protocol layers.</p>
+
+
+<p>
+The Linux PCMCIA/CF layer consists of device drivers for PCMCIA host
+controllers, client drivers for different cards, user mode programs,
+daemons that aid hot plugging, and a kernel card-services core that
+interacts and provides services to all of the above (see <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="#resources">Resources</a>).
+The PCMCIA controller bridges the card to the system bus. It maps card
+memory to host I/O and memory windows and routes interrupts generated
+by the card to a free processor interrupt line. CF cards are smaller,
+but compatible with PCMCIA, and are frequently used in handheld
+devices. PCMCIA/CF cards have two memory spaces: <i xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">attribute memory</i> and <i xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">common memory.</i>
+Attribute memory holds configuration registers and descriptor
+information like the Card Information Structure (CIS). The Linux card
+services core interacts with the host controller device driver, the
+card device drivers, and the user mode <code>cardmgr</code> daemon. It
+invokes the card driver's event handler routine during events like card
+insertion, card removal, and low battery. Whereas card services passes
+information up to <code>cardmgr</code> from the card's CIS, <code>cardmgr</code>
+passes down to card services the resource allocation policy defined in
+user space (/etc/pcmcia/config.opts) for allocating memory windows and
+interrupt levels. Look at drivers/pcmcia/ds.c to see the kernel code
+that interacts with <code>cardmgr</code> and refer to /etc/pcmcia/config.opts to see the user space resource allocation policies.</p>
+
+<p>
+When the Intersil WLAN CF card is inserted, card services invokes the <code>orinoco_cs</code>
+module's PCMCIA event handler. Card services parses the CIS tuples in
+the card attribute memory and passes the information up to <code>cardmgr</code>, which loads the appropriate device drivers from the /etc/pcmcia/config file (see Listing 1). Because the <code>manfid</code> tuple in the card's CIS matches the entry in /etc/pcmcia/config, <code>cardmgr</code> binds the card with the <code>orinoco_cs</code> driver. The device entry in Listing 1 states that the <code>orinoco_cs</code> driver consists of three kernel modules: <code>orinoco</code>, <code>orinoco_cs</code>, and <code>hermes</code>. Also, because the device is of class <code>wireless</code>, <code>cardmgr</code>
+executes the script /etc/pcmcia/wireless while starting and stopping
+the device. The script uses WLAN tools and utilities to configure
+device driver parameters like WEP keys and SSIDs. It can also start
+networking protocols like DHCP (Dynamic Host Configuration Protocol)
+over the WLAN. The example in Listing 1 uses Wireless Extensions tools
+to perform device configuration.</p>
+
+<p>
+<b xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">Note:</b> The exact location of the PCMCIA configuration files depends on the Linux distribution used. </p>
+
+
+
+<a name="code1"><b>Listing 1. PCMCIA device entries for the Intersil WLAN CF card</b></a><br>
+
+
+
+<table bgcolor="#cccccc" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code>
+card "Intersil PRISM2 11 Mbps Wireless Adapter"
+manfid 0x0156, 0x0002
+bind "orinoco_cs"
+<br xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">
+device "orinoco_cs"
+class "wireless" module "orinoco","orinoco_cs","hermes"
+</code></pre></td></tr></tbody></table>
+
+<p>Parameters like WEP keys and SSIDs are configured using the /etc/pcmcia/wireless and the /etc/pcmcia/wireless.opts scripts.</p>
+
+<a name="code2"><b>Listing 2. Configuring WLAN specific parameters</b></a><br>
+
+<table bgcolor="#cccccc" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code>
+iwconfig ethX essid &lt;wlan_name&gt; 
+key AAAA-AAAA-AA [1] key BBBB-BBBB-BB [2] key CCCC-CCCC-CC [3] key DDDD-DDDD-DD [4]
+                   : Set 64-bit WEP Keys and ESSID in the driver
+iwconfig ethX      : Display WLAN parameters
+iwpriv             : Get nongeneric, driver-specific parameters
+iwlist             : List Information and statistics from an interface
+iwspy              : Read quality of link for a set of addresses
+/proc/net/wireless : Wireless Statistics from the device driver
+</code></pre></td></tr></tbody></table>
+
+<p>
+During card insertion, <code>orinoco_cs</code>, like legacy network device drivers, invokes <code>register_netdev</code>
+to get an ethX network interface name assigned to the WLAN interface.
+It also registers an interrupt service routine's address to service
+interrupts generated when wireless data is sent or received. The
+interrupt handler is part of the orinoco module and interacts with the
+Linux networking stack. The key data structure used by the Linux
+networking stack is the <code>sk_buff</code> structure (defined in include/linux/skbuff.h, (see <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="#resources">Resources</a>), which contains control information about a block of memory attached to it. <code>sk_buffs</code>  provide efficient buffer handling and flow control mechanisms for all networking layers. Network device drivers do an <code>dev_alloc_skb</code> and an <code>skb_put</code> to populate an <code>sk_buff</code> with IP data, and then pass it on to the TCP/IP stack by invoking <code>netif_rx</code>. The orinoco interrupt service routine populates <code>sk_buffs</code> with data received from the WLAN and passes it on to the IP stack via <code>netif_rx</code>.</p>
+
+<p>
+Linux TCP/IP applications can run unchanged over the network interface
+provided by the kernel modules mentioned earlier for the Intersil WLAN
+CF card.</p> 
+
+<p><a name="2"><span class="atitle2">Linux Bluetooth</span></a><br>Bluetooth,
+a short-range wireless technology designed to replace cables, supports
+speeds of 723 kbps (asymmetric) and 432 kbps (symmetric) and can
+transfer both data and voice. Bluetooth devices have a range of about
+10 meters (30 feet). (See <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="#resources">Resources</a> for the Bluetooth specification.) </p>
+
+
+<p>
+BlueZ, the official Linux Bluetooth stack, consists of the Host Control
+Interface (HCI) layer, the Bluetooth protocol core, the Logical Link
+Control and Adaptation Protocol (L2CAP), the SCO audio layer, other
+Bluetooth services, user space daemons, and configuration tools (see <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="#resources">Resources</a>).</p>
+
+<p>
+The Bluetooth specification supports UART (Universal Asynchronous
+Receiver/Transmitter) and USB transport mechanisms for Bluetooth HCI
+packets. The BlueZ stack supports both of those transport mechanisms
+(drivers/Bluetooth/). BlueZ BNEP (Bluetooth Network Encapsulation
+Protocol) implements Ethernet emulation over Bluetooth, which lets
+TCP/IP run directly over Bluetooth. The BNEP
+module(net/bluetooth/bnep/) and the user mode <code>pand</code>
+daemon implement Bluetooth Personal Area Networking (PAN). BNEP
+registers itself with the Linux networking layer as an Ethernet device
+using <code>register_netdev</code>, and populates and passes <code>sk_buffs</code> to the protocol stack using <code>netif_rx</code>
+as described for WLAN drivers above. BlueZ RFCOMM
+(net/bluetooth/rfcomm/) provides serial emulation over Bluetooth that
+lets serial port applications like minicom and protocols like
+Point-to-Point Protocol (PPP) run unchanged over Bluetooth. The RFCOMM
+module and the user mode <code>dund</code> daemon implement Bluetooth
+dialup networking. The list below shows the BlueZ modules, utilities,
+daemons, and configuration files necessary to configure various
+protocol services over Bluetooth.</p>
+
+<p>
+Next, consider the examples of a Bluetooth CF card, a Bluetooth USB
+adapter, a device with a built-in CSR Bluetooth chipset, and a Sony
+Bluetooth Headset to see how they work with Linux.</p>
+
+<p><a name="0"><span class="atitle3">Sharp Bluetooth CF card</span></a><br>The
+Sharp Bluetooth CF card uses a UART transport to transfer HCI packets.
+The interaction of the Linux PCMCIA/CF layer with the rest of the OS
+for the Sharp card resembles the one explained for the Intersil WLAN CF
+card, except for the fact that <code>serial_cs</code> is the card services driver that interacts with the Linux PCMCIA core. The <code>serial_cs</code> driver (explained further in "Linux GPRS and Data over GSM" below) emulates a serial port over the Sharp CF card. The BlueZ <code>hci_uart</code> link driver talks with Bluetooth UART channels and connects the emulated serial port to the BlueZ stack.</p> 
+
+
+<p>
+The list below shows the modules that must be loaded when the card is
+inserted. Other Bluetooth CF cards, like the Pretec CompactBT card and
+the Socket Bluetooth card, have UART interfaces, but have their own
+card services drivers (drivers/bluetooth/bt950_cs.c and
+drivers/bluetooth/dtl1_cs.c, respectively). You'll find more
+information about Bluetooth UART transport later in the article.</p>
+
+
+
+<p><b xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">An entry in /etc/pcmcia/config for the Sharp Bluetooth CF card:</b></p>
+<p>card "SHARP Bluetooth Card"<br xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">
+version "SHARP", "Bluetooth Card"<br xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">
+   bind "serial_cs"</p> 
+   
+   
+<p><b xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">The necessary kernel modules to be loaded:</b></p>
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">
+<li>insmod serial_cs</li>
+<li>insmod bluez</li>
+<li>insmod l2cap</li>
+<li>insmod hci_uart</li>
+<li>insmod bnep (for pand)</li>
+<li>insmod rfcomm (for dund)</li>
+</ul>
+
+<p><b xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">BlueZ user space daemons, utilities, and configuration files:</b></p>
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">
+<li><b>hciattach ttySx any [baud_rate] [flow]</b></li>
+<li><b>hciconfig -a</b> : Examine the HCI interface</li>
+<li><b>hcitool -a hci0 scan 'flush</b>: Discover other devices</li>
+<li><b>hcidump</b>: HCI Sniffer</li>
+<li><b>hcid</b>: HCI Daemon</li>
+<li><b>/etc/bluetooth/hcid.conf</b>: HCI daemon configuration file used
+by hcid that specifies link mode (master or slave), link policy,
+inquiry and scan mode, and so on</li>
+<li><b>/etc/bluetooth/pinDB</b>: BlueZ PIN Database</li>
+<li><b>sdpd</b>: Service Discovery Protocol Daemon</li>
+
+<li><b>pand</b>: To run TCP/IP over Bluetooth (--listen for the server, --connect &lt;bluetooth_address&gt; for the client)</li>
+<li><b>/etc/bluetooth/pan/dev-up</b>: pand invokes this script while
+bringing up TCP/IP. This script can contain a command like ifconfig
+bnep0 &lt;ip_address&gt; up to configure an IP address for the
+Bluetooth interface</li>
+<li><b>dund</b>: To run PPP over Bluetooth RFCOMM (--listen for the server, --connect &lt;bluetooth_address&gt; for the client)</li>
+</ul>
+
+<p><a name="0"><span class="atitle3">The Belkin Bluetooth USB Adapter</span></a><br>The
+Belkin Bluetooth USB adapter has a Bluetooth CSR chipset and uses USB
+transport for transferring HCI packets. Therefore, the Linux USB layer,
+the BlueZ USB transport driver, and the BlueZ protocol stack are the
+main kernel layers that get the device working. Now, you'll see how the
+three layers interact to get Linux networking applications running over
+this device.</p>
+
+
+<p>
+The Linux USB subsystem (see <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="#resources">Resources</a>)
+resembles the PCMCIA subsystem in that both have host controller device
+drivers that talk to removable devices and both include a core layer
+that offers services to device drivers for the host controller and the
+individual devices. USB host controllers follow one of two standards:
+UHCI (Universal Host Controller Interface) or OHCI (Open Host
+Controller Interface). As with PCMCIA, the Linux device drivers for the
+individual USB devices do not depend on the host controller. Data
+transfers to and from a USB device fall into one of four categories (or
+pipes):</p>
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">
+<li>Control</li>
+<li>Interrupt</li>
+<li>Bulk</li>
+<li>Isochronous</li>
+</ul>
+
+<p>
+The first two are usually used for small messages while the latter two are used for larger messages.</p>
+
+<p>
+When a USB device is plugged in, it is enumerated by the host
+controller driver using control pipes and assigned a device address (1
+to 127). The device descriptor read by the host controller driver
+contains information about the device, such as <i xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">class</i>, <i xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">subclass</i>, and <i xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">protocol</i>. Linux's <code>usbcore</code>
+kernel module supports USB host controllers and USB devices. It
+contains functions and data structures that USB device drivers can use.
+USB drivers register two entry points, probe and disconnect, with <code>usbcore</code>, along with their class/subclass/protocol information (see <code>struct usb_driver</code> in include/linux/usb.h). When the corresponding USB device is attached, <code>usbcore</code>
+matches the registered class information with the one read from the
+device configuration descriptor during enumeration and binds the device
+with the corresponding driver. The core uses a data structure called
+USB Request Block, or URB (defined in include/linux/usb.h), to
+asynchronously manage data transfers between the host and the device.
+Device drivers use these routines to request various types of data
+transfers (control, interrupt, bulk, or isochronous). The core notifies
+the driver using previously registered callback functions after the
+transfer request is completed. </p>
+
+<p>
+For Bluetooth USB devices, HCI commands are transported using Control
+pipes, HCI events using Interrupt pipes, Asynchronous (ACL) data using
+Bulk pipes, and Synchronous (SCO) audio data using Isochronous pipes.
+The Bluetooth specification defines a class/subclass/protocol code of <code>0xE/0x01/0x01</code>
+for Bluetooth USB devices. The BlueZ USB transport driver
+(drivers/bluetooth/hci_usb.c) registers this class/subclass/protocol
+information with the Linux USB core. When the Belkin USB adapter is
+plugged in, the host controller device driver enumerates it. Because
+the device descriptor read from the adapter during enumeration matches
+the information registered by the <code>hci_usb</code> driver with the USB core, this driver gets attached to the Belkin USB device. The HCI, ACL, and SCO data read by the <code>hci_usb</code>
+driver from the various endpoints described above are transparently
+passed on to the BlueZ protocol stack. Once this is done, Linux TCP/IP
+applications can run over BlueZ BNEP, and serial applications can run
+over BlueZ RFCOMM using the BlueZ services and tools described above.</p>
+
+<p><a name="0"><span class="atitle3">A board with a built-in CSR Bluetooth chipset </span></a><br>Now,
+take a look at Bluetooth network data flow on a device with a built-in
+Bluetooth chipset. Consider a handheld with a built-in CSR Bluetooth
+chipset interfaced to the system using a UART interface. For UART
+interfaces, the available protocols to transport HCI packets between
+the Bluetooth device and the system are BlueCore Serial Protocol
+(BCSP), H4/UART, and H3/RS232. While H4 serves as the standard method
+to transmit Bluetooth data over UART as defined in the specifications,
+the proprietary BCSP protocol from CSR supports error checking and
+retransmission. BCSP is used on non-USB devices based on CSR BlueCore
+chips including PCMCIA and CF cards. BlueZ supports BCSP and H4.</p>
+
+
+<p>
+The legacy serial driver that drives this board's UART channels can
+send and receive data from the BlueZ UART transport driver. If the CSR
+chip is programmed to encapsulate HCI packets using the BSCP protocol,
+you must inform the BlueZ link driver using <code>hciattach</code> (<code>hciattach ttySx bcsp</code>), where <code>x</code> is the UART channel number connected to the CSR chipset. <code>hci_uart</code> now talks to the CSR chip and passes on Bluetooth data to and from the BlueZ stack.</p>
+
+<p><a name="0"><span class="atitle3">Sony HBH-30 Bluetooth Headset</span></a><br>The
+previous Bluetooth device examples showed network data flow. Now,
+consider the transfer of Bluetooth audio (SCO) data by looking at a
+Sony Ericsson Bluetooth headset. Before the headset can start
+communicating with a Linux device, it must be discovered by the
+Bluetooth link layer on the Linux device. Therefore, you must put the
+headset in a discover mode (by pressing a button on the headset).
+Additionally, you need to configure the headset's PIN with BlueZ on the
+Linux device. An application on the Linux Bluetooth device that uses
+BlueZ SCO APIs can now send audio data to the headset. The audio data
+should be in a format understood by the headset (for example, A-law PCM
+[Pulse Code Modulation] format for the Sony headset). There are public
+domain utilities for converting audio (and even text files) into
+various PCM formats. </p> 
+
+
+<p>
+Bluetooth chipsets have PCM interface pins in addition to the HCI
+transport interface. If a device supports, for instance, both GSM and
+Bluetooth, the PCM lines from the GSM chipset might be directly wired
+to the Bluetooth chip's PCM audio lines. You might then have to
+configure the Bluetooth chipset on the Linux device to receive and send
+SCO audio packets over the HCI transport interface rather than the PCM
+interface.</p>
+
+<p><a name="3"><span class="atitle2">Linux GPRS and Data over GSM</span></a><br>GPRS
+is a packet service for carrying data over GSM, the prominent digital
+cellular standard. While data over GSM is circuit-switched and occupies
+a channel irrespective of usage, data over GPRS is an always-on,
+packet-switched data stream where users pay according to usage. GSM
+speeds are typically 9.6 kbps, while GPRS can run at speeds of 56 kbps
+to 170 kbps.</p>
+
+
+<p>
+GPRS and GSM chips usually have a UART interface to the system. For a
+board with built-in GSM/GPRS support (for example, a board with a
+Siemen's MC-45 module wired to a UART channel), the legacy serial
+driver can drive the link. For a PCMCIA/CF form factor (an Options GPRS
+card, for example), <code>serial_cs</code>,
+the generic card service driver to access PCMCIA serial devices, allows
+the rest of the operating system see the card as a serial device. The
+first unused serial device (/dev/ttySx) gets allotted to the card,
+which can then be accessed as if it where a serial device. <code>serial_cs</code>
+can also emulate serial ports over Global Positioning System (GPS)
+PCMCIA and CF cards. For USB GPRS modems, a USB-to-serial converter
+typically converts the USB port into a virtual serial port so the rest
+of the system sees it as a serial device.</p>
+
+<p>
+The GPRS network connects to an external network (like the Internet)
+using a GGSN (Gateway GPRS Support Node). A GPRS device, which
+resembles a modem with an extended AT command set, must define a
+context using an AT command before it enters data mode. The context
+string looks like the example shown in Listing 3.</p>
+
+<a name="code4"><b>Listing 3. Context string</b></a><br>
+
+<table bgcolor="#cccccc" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code>
+ 'AT+CGDCONT=1,"IP","internet.voicestream.com","0.0.0.0",0,0'
+</code></pre></td></tr></tbody></table>
+
+<p>
+In this example, <code>1</code> stands for a context number, <code>IP</code> is the packet type, <code>internet.voicestream.com</code> is an Access Point Name (APN) string, <code>0.0.0.0</code>
+means that the service provider chooses the IP address, and the rest of
+the parameters relate to data and header compression. The APN string
+depends on the service provider. A user name and password are usually
+not needed.</p>
+
+<p>PPP allows networking protocols such as TCP/IP run over a serial
+link. In the context of wireless networks, PPP can get TCP/IP running
+over GPRS, data over GSM, Bluetooth RFCOMM, and IrDa IrCOMM. Listing 4
+shows a common syntax for invoking the PPP daemon, <code>pppd</code>.</p>
+
+<a name="code5"><b>Listing 4. Common syntax for invoking the PPP daemon, <code>pppd</code></b></a><br>
+
+<table bgcolor="#cccccc" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code>
+pppd ttySx call connection-script
+</code></pre></td></tr></tbody></table>
+
+<p>
+In this example, <code>ttySx</code> is the physical or virtual serial device over which PPP runs, and <code>connection-script</code> is a file in the /etc/ppp/peers/ directory that contains the AT command sequences exchanged between <code>pppd</code>
+and the service provider to establish a link. After establishing a link
+connection and completing authentication, PPP starts a Network Control
+Protocol (NCP). IPCP (Internet Protocol Control Protocol) is the NCP
+for running IP. Once IPCP successfully negotiates IP addresses, PPP
+starts talking with the TCP/IP stack.</p>
+
+<p>
+Listing 5 shows an example PPP connection script for connecting to a
+GPRS service provider, while Listing 6 shows a connection script for
+data connection to a GSM service provider.</p>
+
+<a name="code1"><b>Listing 5. A sample pppd connection script for GPRS (/etc/ppp/peer/gprs-script)</b></a><br>
+
+<table bgcolor="#cccccc" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code>
+115200
+connect "/usr/sbin/chat -s -v "" AT+CGDCONT=1,"IP",
+"internet2.voicestream.com","0.0.0.0",0,0 OK AT+CGDATA="PPP",1"
+crtscts
+noipdefault
+modem
+usepeerdns
+defaultroute
+connect-delay 5000
+</code></pre></td></tr></tbody></table>
+
+<p>
+From an operating system's perspective, data over GSM resembles sending
+and receiving data over a dial-up modem connection. The Internet
+Service Provider's (ISP) phone number is dialed using GSM and a dial-up
+connection is established. Authentication occurs with a user name and
+password.</p>
+
+<p>
+Once PPP establishes an IP connection to the service provider, TCP
+applications such as Web browsers can run unchanged over the GSM/GPRS
+device.</p>
+
+<p>
+The gsmlib project provides utilities for voice and SMS (Short Messaging Service) messaging over GSM (see <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="#resources">Resources</a>
+for more on gsmlib). It contains utilities to access the phone book in
+the Subscriber Identity Module (SIM) card, send and receive SMS
+messages, and so on.</p>
+
+<a name="code7"><b>Listing 6. A sample pppd connection script for data over GSM (/etc/ppp/peer/gsm-script)</b></a><br>
+
+<table bgcolor="#cccccc" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code>
+115200
+connect '/usr/sbin/chat -s -v ABORT "NO CARRIER" ABORT "NO DIALTONE" ABORT "BUSY" "" AT OK 
+ATDT&lt;phone_number&gt; CONNECT'
+crtscts
+noipdefault
+modem
+user "linux"
+usepeerdns
+defaultroute
+connect-delay 5000
+</code></pre></td></tr></tbody></table>
+
+
+<p><a name="4"><span class="atitle2">Linux Infrared Data</span></a><br>Infrared
+Data (IrDa) is a specification to wirelessly transfer data using
+infrared radiation. It is primarily used for linking laptops or for
+connecting equipment like video or photo cameras to computer systems.</p>
+
+
+<p>
+IrDa speeds range from 115 kbps for Serial Infrared (SIR) to 16 Mbps
+for Very Fast Infrared (VFIR). Most IrDa chips in the SIR mode are UART
+16650-compatible (16650 is a common PC UART), so the legacy Linux
+serial port drivers can serve as link-level drivers. The IrDa line
+discipline implementation, IrTTY (drivers/net/irda/irtty.c), lets the
+serial driver drive SIR. The IrPORT driver (drivers/net/irda/irport.c)
+replaces IrTTY and the serial driver, and offers better device control.
+IrDa chips incompatible with the serial driver have their own device
+drivers. The NSC PC87108 chipset, for example, uses its own driver
+(nsc-ircc.c). Similar to the hci-usb driver used for USB Bluetooth
+devices discussed above, USB IrDa FIR dongles are supported by the
+irda-usb.c device driver.</p>
+
+<p>
+IrLAP is the link accesses protocol layer responsible for IrDa device
+discovery, retransmission, and flow control. Above IrLAP resides the
+IrLMP link management layer and the Tiny Transport protocol layer
+(TinyTP). Above these are the IrCOMM and IrLAN layers. IrCOMM
+(implemented in net/irda/ircomm/) provides serial emulation that lets
+applications that run over serial ports, like terminal emulators, run
+unchanged over the IrDa stack. IrLAN (implemented in net/irda/irlan/)
+provides a virtual network interface that lets TCP/IP run directly over
+the IrDa stack. The IrLAN code uses <code>register_netdev</code> to register an Ethernet device with the Linux networking layer and <code>netif_rx</code>
+to send data to the Linux IP stack (as explained for WLAN drivers and
+for Bluetooth BNEP). IrCOMM is analogous to Bluetooth RFCOMM, while
+IrLAN is analogous to Bluetooth BNEP.</p>
+
+<p>
+IrOBEX is a simple protocol built on top of TinyTP that allows transfer
+of binary data. Extensions to IrOBEX define transfer of different kinds
+of data objects.</p>
+
+<p>
+To use the IrDa protocols with Linux, you must install IrDa utilities
+(like irattach) developed as part of the Linux IrDa project.</p>
+
+<p><a name="5"><span class="atitle2">Performance issues</span></a><br>Network
+performance depends on the characteristics of the particular bearer
+network. GPRS bandwidth, for example, depends on the coding schema
+used, while Bluetooth performance is affected by segmentation at the
+L2CAP layer. For communication between a WLAN station and an access
+point, frame acknowledgments decrease the bandwidth, as do the number
+of other stations using the same access point. </p>
+
+
+<p>
+Characteristics of wireless networks like low and fluctuating bandwidth
+and high latencies skew TCP's measurement and transmission strategies.
+Even though most losses in wireless networks stem from factors like
+signal fading, interference, and link blackouts, TCP assumes the losses
+to be related to congestion, so it kicks in algorithms that slow down
+network traffic. There are various projects that tune TCP and Web
+browser behavior to suit wireless networks. </p>
+
+
+<p><a name="6"><span class="atitle2">Conclusion</span></a><br>In this
+article you've toured the Linux device driver and network protocol
+layers for popular wireless technologies including WLAN, Bluetooth,
+GPRS, GSM, and IrDA. You've also learned how different wireless devices
+work with Linux by tracing corresponding code paths and discussing
+relevant user space tools.</p>
+
+
+<p>
+Armed with a general understanding of the core support provided on
+Linux for various wireless, networking, and bus technologies, you can
+now tinker with various wireless devices having different form factors,
+and develop Linux kernel code required to enable unsupported devices.</p>
+
+    <p><a name="resources"><span class="atitle2">Resources</span></a>
+</p><ul><li>Read the <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html">Linux Wireless Extensions project page</a>.<br><br></li><li>Find out more about the <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://www.linux-wlan.org/">linux-wlan</a> project.<br><br></li><li>For more on the Linux Orinoco WLAN driver, go to "<a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Orinoco.html">MPL/GPL drivers for the Wavelan IEEE/Orinoco and others</a>."<br><br></li><li>To learn more about the Host AP driver for Intersil WLAN cards, read "<a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://hostap.epitest.fi/">Host AP driver for Intersil Prism2/2.5/3</a>."<br><br></li><li>This page contains Linux device drivers for <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://sourceforge.net/projects/spectrum24/">Spectrum-based WLAN cards</a> (Socket, Intel Wireless/PRO, and others).<br><br></li><li>Linux drivers for Atmel-based <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://at76c503a.berlios.de/">USB WLAN devices</a> are described here.<br><br></li><li>Read the <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://pcmcia-cs.sourceforge.net/">Linux PCMCIA Programmer's Guide</a>.<br><br></li><li>Alan Cox's "<a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://www.linux.org.uk/Documents/buffers.html">Network Buffers</a>", provides good information on Linux networking buffer management (sk_buffs).<br><br></li><li>The <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://www.bluetooth.org/spec/">Bluetooth</a> Web site provides information on Bluetooth specifications.<br><br></li><li>You say you prefer to work in Linux? This <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://www-106.ibm.com/developerworks/wireless/edu/wi-dw-wilinux-i.html">tutorial</a> teaches you how to configure a wireless network card under Linux (<i xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">developerWorks</i>, 2003).<br><br></li><li>The <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://bluez.sourceforge.net/">Linux BlueZ</a> home page provides the latest information on BlueZ.<br><br></li><li>Read Detlef Fliegl's "<a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://usb.in.tum.de/usbdoc/">Programming Guide for Linux USB Device Drivers</a>" (2000).<br><br></li><li>The article "<a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://www-106.ibm.com/developerworks/linux/library/l-wap.html">Building a wireless access point on Linux</a>", (<i xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">developerWorks</i>,
+2003) takes a look at what's involved in building a wireless bridge
+using Linux, including software and hardware considerations.<br><br></li><li>Check out Joshua Drake's and Corwin Light Williams's "<a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://www.linux.org/docs/ldp/howto/PPP-HOWTO/">Linux PPP How-to</a>" (Linux Online! 2000).<br><br></li><li>Find out how open source tools are emerging in the article "<a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://www-106.ibm.com/developerworks/wireless/library/wi-p2papps.html">Open source wireless tools emerge</a>" (<i xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">developerWorks</i>, 2003).<br><br></li><li>The homepage for <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://www.pxh.de/fs/gsmlib/">gsmlib</a> provides a set of libraries and utilities that work over GSM.<br><br></li><li>See this <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://www-106.ibm.com/developerworks/wireless/library/wi-tip24.html">Tips and Tricks</a> article to find out how to manage mobile profiles (<i xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/">developerWorks</i>, 2002).<br><br></li><li>For more on using Infrared communications on Linux, check out <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="http://irda.sourceforge.net/">Linux IrDa</a>.<br></li></ul>
+
+<p></p><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><a name="author1"></a><span class="atitle2">About the author</span><br>Sreekrishnan
+Venkateswaran holds a master's degree in Computer Science from the
+Indian Institute of Technology, Kanpur, India. He's been working with
+IBM India since February 1996. His interests include designing device
+drivers and network protocols. You can contact Sreekrishnan at <a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dw="http://www.ibm.com/developerWorks/" href="mailto:s_krishna@in.ibm.com">s_krishna@in.ibm.com</a>.
+    
+</td></tr></tbody></table><br clear="all"><img alt="" src="wi-enable_files/c.gif" border="0" height="10" width="100"><br><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr valign="top"><td align="right" width="100%"><a href="ftp://www6.software.ibm.com/software/developer/library/wi-enable.pdf" onkeypress="sa_onclick(this.href)" onclick="sa_onclick(this.href)"><img alt="88 KB" src="wi-enable_files/icon-pdf.gif" border="0" height="26" width="35"></a><a href="javascript:void newWindow()"><img alt="e-mail it!" src="wi-enable_files/icon-email.gif" border="0" height="26" width="46"></a></td><td width="5"><img alt="" src="wi-enable_files/c.gif" border="0" height="1" width="5"></td></tr><tr valign="top"><td colspan="2" bgcolor="#000000"><img alt="" src="wi-enable_files/c.gif" border="0" height="1" width="100"></td></tr><tr valign="top"><td colspan="2" bgcolor="#ffffff"><img alt="" src="wi-enable_files/c.gif" border="0" height="8" width="100"></td></tr></tbody></table><table xmlns:fo="http://www.w3.org/1999/XSL/Format" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr valign="top"><td><form action="http://www.alphaworks.ibm.com/developerworks/ratings.nsf/RateArticle?CreateDocument" method="post"><input value="Linux wireless networking" name="ArticleTitle" type="hidden"><input value="Wireless" name="Zone" type="hidden"><input value="http://www-106.ibm.com/developerworks/thankyou/feedback-thankyou.html" name="RedirectURL" type="hidden"><a name="rating"><span class="atitle2">Rate this article</span></a><p>This content was helpful to me:</p><table border="0" cellpadding="0" cellspacing="0" width="600"><tbody><tr><td colspan="5"><img alt="" src="wi-enable_files/c.gif" border="0" height="8" width="100"></td></tr><tr valign="top"><td width="25%"><input value="1" name="Rating" type="radio">Strongly disagree (1)</td><td width="17%"><input value="2" name="Rating" type="radio">Disagree (2)</td><td width="16%"><input value="3" name="Rating" type="radio">Neutral (3)</td><td width="17%"><input value="4" name="Rating" type="radio">Agree (4)</td><td width="25%"><input value="5" name="Rating" type="radio">Strongly agree (5)</td></tr></tbody></table><br><b>Comments?</b><br><textarea cols="60" rows="5" wrap="virtual" name="Comments"></textarea><br><br><input value="Submit feedback" type="submit"></form></td></tr><tr valign="top"><td bgcolor="#ffffff"><img alt="" src="wi-enable_files/c.gif" border="0" height="8" width="100"></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr valign="top"><td width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr valign="top"><td width="100%"><img alt="" src="wi-enable_files/c.gif" border="0" height="4" width="2"><br><a href="http://www-136.ibm.com/developerworks/" class="dwbctl">developerWorks</a>  &gt; <a class="dwbctl" href="http://www-136.ibm.com/developerworks/wireless">Wireless</a> &gt;
+              </td><td align="right" width="136"><a href="http://www-136.ibm.com/developerworks/"><img alt="developerWorks" src="wi-enable_files/dwlogo-small.gif" border="0" height="24" width="136"></a></td><td width="5"><img alt="" src="wi-enable_files/c.gif" border="0" height="1" width="5"></td></tr></tbody></table></td></tr></tbody></table></td><td width="1"><img alt="" src="wi-enable_files/c.gif" border="0" height="1" width="1"></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td><img src="wi-enable_files/c.gif" alt="" height="1" width="1"></td>
+</tr>
+<tr valign="top">
+<td class="bbg" height="21">&nbsp;&nbsp;<a href="http://www.ibm.com/ibm/" class="mainlink">About IBM</a><span class="divider">&nbsp;&nbsp;|&nbsp;&nbsp;</span><a href="http://www.ibm.com/privacy/" class="mainlink">Privacy</a><span class="divider">&nbsp;&nbsp;|&nbsp;&nbsp;</span><a href="http://www.ibm.com/legal/" class="mainlink">Terms of use</a><span class="divider">&nbsp;&nbsp;|&nbsp;&nbsp;</span><a href="http://www.ibm.com/contact/" class="mainlink">Contact</a></td>
+</tr>
+</tbody></table>
+
+<!-- Survey trigger start -->
+<script language="JavaScript1.2" type="text/javascript">
+//<![CDATA[<!--
+var language="en";
+var country="us";
+var site="cvm";
+var module="devworks";
+var version="1";
+var rate="0.51"; 
+//-->]]>
+</script>
+<script language="JavaScript1.2" type="text/javascript" src="wi-enable_files/popup.js">
+</script><script type="text/javascript" language="JavaScript1.2" src="wi-enable_files/design.js"></script><script type="text/javascript" language="JavaScript1.2" src="wi-enable_files/cookie.js"></script><script type="text/javascript" language="JavaScript1.2" src="wi-enable_files/v11trigger.js"></script>
+<!-- Survey trigger end -->
+
+<script type="text/javascript" language="JavaScript1.2" src="wi-enable_files/stats.js"></script>
+<noscript><img src="//stats.www.ibm.com/rc/images/uc.GIF?R=noscript" width="1" height="1" alt="" border="0" /></noscript></body></html>
